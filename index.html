@@ -25,6 +25,18 @@
     .stage-hint{display:none;}
     .phone{width:100%;height:100%;border-radius:0;border:none;box-shadow:none;}
   }
+  /* 窄屏(真手机更窄视口)收紧文字：保证关键行不换行、金额不偏大 */
+  @media (max-width:430px){
+    .pane{padding:10px 10px 14px;}
+    .card{padding:11px 12px;}
+    .num{font-size:22px;letter-spacing:0;}
+    .lab{font-size:10px;}
+    .ai-strip .t{font-size:11px;letter-spacing:-.02em;}
+    .ai-strip .d{font-size:10px;}
+    .kv{font-size:11px;padding:6px 0;white-space:nowrap;}
+    .kv .k{max-width:66%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .sec-t{font-size:11px;margin:10px 2px 6px;}
+  }
 
   .status{flex:0 0 auto;height:42px;display:flex;align-items:center;justify-content:space-between;padding:6px 18px 0;background:var(--bg);font-size:12.5px;color:var(--ink);font-weight:600;}
   .status .ic{display:flex;gap:5px;align-items:center;color:var(--ink);}
@@ -76,8 +88,8 @@
   .btn:active{filter:brightness(.92);transform:scale(.99);}
   .btn.ghost{background:#fff;color:var(--dgreen);border:1px solid var(--green);}
   .ai-strip{background:linear-gradient(120deg,var(--dgreen),var(--green));border-radius:14px;color:#fff;padding:13px 14px;margin-bottom:10px;}
-  .ai-strip .t{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;}
-  .ai-strip .d{font-size:11.5px;opacity:.92;margin-top:5px;line-height:1.6;}
+  .ai-strip .t{font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .ai-strip .d{font-size:11px;opacity:.92;margin-top:5px;line-height:1.6;}
   .sec-t{font-size:12px;font-weight:800;color:var(--dgreen);margin:12px 2px 7px;display:flex;align-items:center;gap:6px;}
   .sec-t::before{content:"";width:4px;height:12px;background:var(--green);border-radius:2px;}
   .kv{display:flex;justify-content:space-between;font-size:12px;padding:7px 0;border-bottom:1px dashed var(--line);}
@@ -302,11 +314,11 @@
       <div class="pane" data-pane="3">
         <div class="card">
           <div class="hrow"><span class="lab">本月累计佣金（元）</span><span class="pill amber">可提现</span></div>
-          <div class="hrow" style="margin-top:6px;align-items:flex-end;"><span class="num">¥ 3,599.50</span><span class="lab">已结算 ¥2,699.75 ｜ 待结算 ¥899.85</span></div>
+          <div class="hrow" style="margin-top:6px;align-items:flex-end;gap:10px;"><span class="num" style="font-size:23px;line-height:1;">¥ 3,599.50</span><span class="lab" style="text-align:right;flex:1;white-space:nowrap;line-height:1.3;">已结算 ¥2,699.75 ｜ 待结算 ¥899.85</span></div>
           <div class="btn" style="margin-top:10px;" data-act="toast:提现申请已提交（T+1 到账，已代扣个税）">提现到微信零钱（T+1，已代扣个税）</div>
         </div>
-        <div class="sec-t">佣金的唯一产生公式（合规白名单）</div>
-        <div class="card" style="text-align:center;padding:14px;"><div style="font-size:13px;font-weight:800;color:var(--dgreen)">佣金 = 本人直接成交订单实付金额 × 佣金比例</div><div class="flow" style="justify-content:center;margin-top:8px;"><b>真实成交</b>→<b>比例白名单 10–20%</b>→<b>支付分账</b>→<b>全程留痕</b></div><div style="font-size:10.5px;color:var(--sub);line-height:1.6;">系统内不存在按人头、按层级、按入门费的任何计酬函数<br>分销关系仅一级直推（数据库结构层面无多级字段）</div></div>
+        <div class="sec-t">佣金的唯一产生公式</div>
+        <div class="card" style="text-align:center;padding:12px;"><div style="font-size:12px;font-weight:800;color:var(--dgreen);white-space:nowrap;letter-spacing:-.02em;">佣金 = 本人直接成交订单实付金额 × 佣金比例</div><div class="flow" style="justify-content:center;margin-top:7px;white-space:nowrap;"><b>真实成交</b>→<b>比例白名单 10–20%</b>→<b>支付分账</b>→<b>全程留痕</b></div><div style="font-size:10px;color:var(--sub);line-height:1.6;white-space:nowrap;margin-top:5px;">系统内不存在按人头、按层级、按入门费的任何计酬函数<br>分销关系仅一级直推（数据库结构层面无多级字段）</div></div>
         <div class="sec-t">明细（可溯源账本 · 点击可展开凭证）</div>
         <div class="card">
           <div class="kv" data-act="toast:展开凭证：溯源码 #A7F3 · 微信支付分账单号 4200…8821 · 已上链存证"><span class="k">09-01 大有收获课包 ¥5,999 ×15%</span><span class="v plus">+¥899.85</span></div>
@@ -360,10 +372,10 @@
           <div class="mi" data-act="sub:tax"><div class="ic" style="background:#fdf1dc">💰</div><div class="tt">纳税记录 <span style="color:var(--sub);font-weight:600;">· 平台代扣代缴</span></div><span class="arr">›</span></div>
           <div class="mi" data-act="sub:fb"><div class="ic" style="background:#fdeef0">🎧</div><div class="tt">帮助与客服 <span style="color:var(--sub);font-weight:600;">· 申诉通道</span></div><span class="arr">›</span></div>
         </div>
-
-        <!-- 二级子页容器 -->
-        <div class="subpane" id="subpane"><div class="subnav"><span class="bk" id="subBack">‹</span><b id="subTitle"></b></div><div id="subBody"></div></div>
       </div>
+
+      <!-- 二级子页容器（放在 .scr 覆盖层下，不参与任何 pane 的滚动，避免叠到内容上） -->
+      <div class="subpane" id="subpane"><div class="subnav"><span class="bk" id="subBack">‹</span><b id="subTitle"></b></div><div id="subBody"></div></div>
     </div>
 
     <div class="tabbar">
