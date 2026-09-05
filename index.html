@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>青豆共生伙伴平台 · 交互版 Demo V1.2</title>
 <style>
   :root{
@@ -56,8 +56,6 @@
   .navbar .back{position:absolute;left:6px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--dgreen);font-size:18px;border-radius:50%;}
   .navbar .back.on{background:var(--lgreen);}
   .navbar b{font-size:16px;color:var(--ink);}
-  /* 进入二级页时隐藏外层导航栏返回箭头，只保留二级页自己的有效返回箭头 */
-  body.sub-open .navbar .back{display:none;}
 
   .scr{flex:1;overflow:hidden;position:relative;background:var(--bg);}
   .pane{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:12px 12px 16px;background:#f7faf8;scrollbar-width:none;
@@ -589,10 +587,9 @@
     subBody.innerHTML = pg.html;
     subpane.classList.add("on"); subpane.scrollTop = 0;
     document.getElementById("scr").classList.add("sub-open");
-    document.body.classList.add("sub-open");
     subBody.querySelectorAll("[data-act]").forEach(el=>{ el.addEventListener("click",e=>{ const a=el.dataset.act; if(a.startsWith("sub:")){ openSub(a.slice(4)); } else if(a==="toast") showToast("演示数据 · 仅供评审参考"); else if(a.startsWith("toast:")) showToast(a.slice(6)); }); });
   }
-  function closeSub(){ subpane.classList.remove("on"); document.getElementById("scr").classList.remove("sub-open"); document.body.classList.remove("sub-open"); }
+  function closeSub(){ subpane.classList.remove("on"); document.getElementById("scr").classList.remove("sub-open"); }
   document.getElementById("subBack").addEventListener("click",closeSub);
 
   // ===== 全局点击 =====
