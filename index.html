@@ -94,7 +94,7 @@
   .thumb{width:64px;height:64px;border-radius:12px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;text-align:center;line-height:1.3;}
   .prod .info{flex:1;min-width:0;}
   .prod .name{font-size:12.5px;font-weight:700;line-height:1.4;}
-  .prod .meta{font-size:10.5px;color:var(--sub);margin-top:3px;}
+  .prod .meta{font-size:10.5px;color:var(--sub);margin-top:3px;line-height:1.5;}
   .prod .comm{font-size:11px;color:#c77d0a;font-weight:700;margin-top:4px;}
   .match{display:flex;align-items:center;gap:6px;margin-top:6px;}
   .bar{flex:1;height:6px;background:#eef1ef;border-radius:99px;overflow:hidden;}
@@ -126,15 +126,39 @@
   .lvl .dd{font-size:10.5px;color:var(--sub);margin-top:2px;}
   .lvl .st{margin-left:auto;font-size:10px;font-weight:700;white-space:nowrap;}
 
-  /* 我的页 头部卡 */
-  .mine-head{background:linear-gradient(150deg,var(--dgreen),var(--green));border-radius:0 0 20px 20px;padding:16px 16px 20px;color:#fff;margin:-12px -12px 12px;}
+  /* 我的页 头部卡（白色） */
+  .mine-head{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(20,50,35,.05);}
   .mine-head .row1{display:flex;align-items:center;gap:12px;}
-  .mine-head .av{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:24px;position:relative;}
-  .mine-head .av .up{position:absolute;bottom:-3px;background:#fff;color:var(--dgreen);font-size:8px;padding:1px 5px;border-radius:99px;font-weight:700;}
-  .mine-head .name{font-size:17px;font-weight:800;}
-  .mine-head .role{display:inline-block;font-size:9.5px;background:rgba(255,255,255,.22);padding:2px 8px;border-radius:99px;margin-top:4px;}
-  .mine-head .uid{font-size:11px;opacity:.9;margin-top:6px;}
-  .mine-head .chip{font-size:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);padding:3px 9px;border-radius:99px;margin-left:auto;}
+  .mine-head .av{width:54px;height:54px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;font-weight:800;flex:0 0 auto;}
+  .mine-head .name{font-size:17px;font-weight:800;color:var(--ink);}
+  .mine-head .role{display:inline-block;font-size:9.5px;background:var(--lgreen);color:var(--dgreen);padding:2px 8px;border-radius:99px;margin-left:6px;font-weight:700;vertical-align:middle;}
+  .mine-head .uid{font-size:11px;color:var(--sub);margin-top:6px;}
+  .mine-head .mh-gear{display:flex;align-items:center;gap:4px;color:var(--dgreen);font-size:11px;font-weight:700;background:var(--lgreen);border-radius:99px;padding:5px 11px;margin-left:auto;cursor:pointer;white-space:nowrap;}
+  .mine-head .mh-gear span{font-size:14px;}
+
+  /* 我的页 三格数据 */
+  .stat3{display:flex;background:#fff;border-radius:14px;padding:12px 6px;margin-bottom:10px;box-shadow:0 1px 3px rgba(20,50,35,.05);}
+  .stat3>div{flex:1;text-align:center;}
+  .stat3 .num{font-size:20px;}
+  .stat3 .lab{font-size:11px;margin-top:3px;}
+
+  /* 成长值环 */
+  .ring-mini{width:86px;height:86px;border-radius:50%;background:conic-gradient(var(--green) 0 72%,#eef1ef 72% 100%);display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative;}
+  .ring-mini::before{content:"";position:absolute;inset:9px;background:#fff;border-radius:50%;}
+  .ring-txt{position:relative;text-align:center;}
+  .ring-txt b{font-size:15px;color:var(--dgreen);}
+  .ring-txt span{display:block;font-size:9px;color:var(--sub);margin-top:2px;}
+
+  /* 成长阶梯 徽章配色 */
+  .bd-g1{background:#9aa6a0;}
+  .bd-g2{background:var(--green);}
+  .bd-g3{background:#3B7DDD;}
+  .bd-g4{background:var(--orange);}
+  .st-pass{color:#9aa6a0;}
+  .st-cur{color:var(--dgreen);}
+  .st-next{color:#e0442c;font-size:10px;}
+  .st-lock{color:#9aa6a0;}
+
   .mi{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:8px;box-shadow:0 1px 3px rgba(20,50,35,.04);cursor:pointer;}
   .mi .ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex:0 0 auto;}
   .mi .tt{font-size:12.5px;font-weight:700;}
@@ -146,9 +170,13 @@
   .skill{background:linear-gradient(160deg,#fff,#f2f7f4);border-radius:14px;padding:14px;text-align:center;box-shadow:0 1px 3px rgba(20,50,35,.05);cursor:pointer;border:1px solid var(--line);}
   .skill .ic{width:42px;height:42px;border-radius:12px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;background:linear-gradient(135deg,var(--green),var(--dgreen));}
   .skill .tt{font-size:12.5px;font-weight:700;}
-  .skill .dd{font-size:10px;color:var(--sub);margin-top:4px;line-height:1.5;}
+  .skill .dd{font-size:10px;color:var(--sub);margin-top:4px;line-height:1.5;text-align:left;}
   .ai-chat{border-radius:12px;padding:12px;margin-bottom:10px;background:#fff;box-shadow:0 1px 3px rgba(20,50,35,.05);}
   .ai-chat .q{font-size:11.5px;line-height:1.6;}
+  .ai-input{position:sticky;bottom:0;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 8px 8px 14px;margin-top:4px;box-shadow:0 -2px 10px rgba(0,0,0,.04);}
+  .ai-input input{flex:1;border:none;outline:none;font-size:12px;color:var(--ink);background:transparent;}
+  .ai-input input::placeholder{color:#aab4ae;}
+  .ai-input button{width:34px;height:34px;border-radius:50%;border:none;background:var(--green);color:#fff;font-size:15px;cursor:pointer;flex:0 0 auto;}
 
   .sheet-mask{position:absolute;inset:0;background:rgba(20,40,30,.4);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s;}
   .sheet-mask.on{opacity:1;pointer-events:auto;}
@@ -180,11 +208,11 @@
       <div class="pane on" data-pane="0">
         <div class="ai-strip">
           <div class="t">🌤 早上好，林晓芸 · AI 今日建议</div>
-          <div class="d">你的好友圈中「4–8 岁宝妈」占比 62%，本周「说客英语·大有收获体验课」转化率最高。建议今日 10:00 前发布第一条素材。</div>
+          <div class="d">你的好友圈中「4–8 岁宝妈」占比 62%，本周「大有收获入门课包」新客转化率最高。建议今日 10:00 前发布第一条素材。</div>
         </div>
         <div class="card">
           <div class="hrow"><span class="lab">今日预估收益（元）</span><span class="pill">实时</span></div>
-          <div class="hrow" style="margin-top:6px;align-items:flex-end;"><span class="num">¥ 168.50</span><span class="lab">昨日 ¥0 ｜ 本月累计 <b style="color:var(--dgreen)">¥2,318</b></span></div>
+          <div class="hrow" style="margin-top:6px;align-items:flex-end;"><span class="num">¥ 899.85</span><span class="lab">昨日 ¥0 ｜ 本月累计 <b style="color:var(--dgreen)">¥3,599.50</b></span></div>
           <div class="kv" style="margin-top:8px;"><span class="k">今日新增咨询</span><span class="v">4 人</span></div>
           <div class="kv"><span class="k">待跟进试听</span><span class="v">2 人</span></div>
           <div class="kv"><span class="k">今日成交</span><span class="v plus">1 单 · 大有收获课包 ¥5,999</span></div>
@@ -213,22 +241,22 @@
           <div class="prod" data-act="detail:course1">
             <div class="thumb" style="background:linear-gradient(135deg,#1F9D6C,#0E6B48)">大有收获<br>入门课包</div>
             <div class="info">
-              <div class="name">说客英语 · 大有收获课包（173 课时）</div>
-              <div class="meta">¥5,999 ｜ 活动价 ｜ 有效期 20 个月</div>
-              <div class="comm">佣金 15% · 单佣 ¥899.85</div>
+              <div class="name">说客英语 · 大有收获课包（168+5 赠 = 173 课时）</div>
+              <div class="meta">¥5,999 ｜ 约 ¥34.68/课时 ｜ 有效期 20 个月 · 菲教 1 节扣 1 课时</div>
+              <div class="comm">佣金 15% · 单佣 ¥899.9</div>
               <div class="match"><div class="bar"><i style="width:94%"></i></div><em>匹配 94%</em></div>
             </div>
           </div>
-          <div class="chk" style="margin-top:9px">💡 AI 推荐理由：你上周成交的 1 单即为此品类；同类圈层分销员转化率 8.2%</div>
+          <div class="chk" style="margin-top:9px">💡 AI 推荐理由：你的圈层以 4–8 岁零基础家庭为主，入门课包决策门槛最低；同类圈层分销员新客首单多为此课包。</div>
           <div class="btn" data-act="toast">一键加入「我的货架」</div>
         </div>
         <div class="card">
           <div class="prod" data-act="detail:course2">
             <div class="thumb" style="background:linear-gradient(135deg,#3B7DDD,#274b8f)">满载而归<br>进阶课包</div>
             <div class="info">
-              <div class="name">说客英语 · 满载而归课包（320 课时）</div>
-              <div class="meta">¥9,999 ｜ 活动价 ｜ 有效期 32 个月</div>
-              <div class="comm">佣金 12% · 单佣 ¥1,199.88</div>
+              <div class="name">说客英语 · 满载而归课包（295+25 = 320 课时）</div>
+              <div class="meta">¥9,999 ｜ 约 ¥31.25/课时 ｜ 有效期 32 个月 · 中教 1 节扣 2 课时</div>
+              <div class="comm">佣金 15% · 单佣 ¥1,499.9</div>
               <div class="match"><div class="bar"><i style="width:86%"></i></div><em>匹配 86%</em></div>
             </div>
           </div>
@@ -236,73 +264,103 @@
         </div>
         <div class="card">
           <div class="prod" data-act="detail:course3">
-            <div class="thumb" style="background:linear-gradient(135deg,#F2A93B,#c77d0a)">五谷丰登<br>全年课包</div>
+            <div class="thumb" style="background:linear-gradient(135deg,#F2A93B,#c77d0a)">五谷丰登<br>长期课包</div>
             <div class="info">
-              <div class="name">说客英语 · 五谷丰登课包（900 课时）</div>
-              <div class="meta">¥22,888 ｜ 活动价 ｜ 有效期 78 个月</div>
-              <div class="comm">佣金 10% · 单佣 ¥2,288.80</div>
-              <div class="match"><div class="bar"><i style="width:70%"></i></div><em>匹配 70%</em></div>
+              <div class="name">说客英语 · 五谷丰登课包（800+100 = 900 课时）</div>
+              <div class="meta">¥22,888 ｜ 约 ¥25.43/课时 ｜ 有效期 78 个月 · 欧美外教 1 节扣 3 课时起</div>
+              <div class="comm">佣金 12% · 单佣 ¥2,746.6</div>
+              <div class="match"><div class="bar"><i style="width:64%"></i></div><em>匹配 64%</em></div>
             </div>
           </div>
         </div>
         <div class="sec-t">为什么不能自己随便卖？</div>
-        <div class="card" style="font-size:11px;color:var(--sub);line-height:1.7;">平台所有商品均通过 <b style="color:var(--dgreen)">S 端品控准入</b>：资质审核 → 定价校验（禁止高溢价）→ 佣金白名单（10–20%）→ 广告素材预审。你看到的每一件商品，都是"可放心推荐给朋友"的。</div>
+        <div class="card" style="font-size:11px;color:var(--sub);line-height:1.7;">平台在售商品对接<b style="color:var(--dgreen)">说客英语 2026 年 8 月丰收季真实价格体系</b>；扣课时规则：菲教 1 节扣 1 课时、中教扣 2、欧美扣 3 起，折算菲教约 25–35 元/节。所有商品均通过 <b style="color:var(--dgreen)">S 端品控准入</b>：资质审核 → 定价校验（禁止高溢价）→ 佣金白名单（10–20%）→ 广告素材预审。你看到的每一件商品，都是"可放心推荐给朋友"的。</div>
       </div>
 
       <!-- 屏3 AI助手（居中凸起） -->
       <div class="pane" data-pane="2">
-        <div class="ai-chat">
-          <div style="font-size:13px;font-weight:800;color:var(--dgreen);margin-bottom:8px;">🤖 AI 共生助手 · 六大技能</div>
-          <div class="q">我根据你的圈层画像、近期成交与合规要求，归纳了 6 个能力。点进去即可用。你今天想从哪个开始？</div>
+        <div class="ai-strip">
+          <div class="t">👋 你好，林晓芸 · 我是你的共生创业助手</div>
+          <div class="d">选品、素材、话术、合规、学习、收益问题，都可以直接问我。全程广告法+收益承诺双审，放心用。</div>
         </div>
+        <div class="sec-t">快捷技能</div>
+        <div class="skill-grid">
+          <div class="skill" data-act="toast:AI 素材工厂：已生成朋友圈文案 + 海报，并完成合规审核"><div class="ic">✍️</div><div class="tt">AI 素材工厂</div><div class="dd">一键生成朋友圈文案+海报，自动合规审核</div></div>
+          <div class="skill" data-act="toast:AI 选品顾问：已按你的圈层画像匹配高契合课包"><div class="ic">🎯</div><div class="tt">AI 选品顾问</div><div class="dd">按圈层画像匹配课程，长期信任优先</div></div>
+          <div class="skill" data-act="toast:AI 跟进话术：咨询应答/试听回访/促单提醒"><div class="ic">💬</div><div class="tt">AI 跟进话术</div><div class="dd">咨询应答 / 试听回访 / 促单提醒</div></div>
+          <div class="skill" data-act="toast:AI 学习教练：新手课程/认证路径/成长值规划"><div class="ic">🎓</div><div class="tt">AI 学习教练</div><div class="dd">新手课程 · 认证路径 · 成长值规划</div></div>
+          <div class="skill" data-act="toast:合规自检：广告法违禁词/收益承诺一键排查"><div class="ic">🛡️</div><div class="tt">合规自检</div><div class="dd">广告法违禁词/收益承诺一键排查</div></div>
+          <div class="skill" data-act="toast:经营参谋：收益归因/客群分析/下周建议"><div class="ic">📊</div><div class="tt">经营参谋</div><div class="dd">收益归因 · 客群分析 · 下周建议</div></div>
+        </div>
+        <div class="sec-t">对话演示</div>
+        <div class="chat mine"><div class="av" style="background:#3B7DDD">我</div><div class="msg">乐乐妈妈试听完还没回复，帮我写一条不催单的回访话术</div></div>
+        <div class="chat"><div class="av" style="background:var(--green)">AI</div><div class="msg">建议这样发：<br>「乐乐妈妈，昨晚的试听老师说乐乐开口次数比同龄平均多 40%，特别是动物单词环节🐶🐱我把老师的话原话记录发您看看？不着急决定，孩子兴趣最重要。」<br>✅ 已通过合规审核：无收益承诺、无违禁词</div></div>
+        <div class="chat"><div class="av" style="background:var(--green)">AI</div><div class="msg">需要我把它转成朋友圈素材，或者直接生成带溯源码的试听邀请海报吗？</div></div>
+        <div class="ai-input"><input placeholder="输入你的问题，或点上方快捷技能…" /><button>➤</button></div>
       </div>
 
       <!-- 屏4 收益 -->
       <div class="pane" data-pane="3">
         <div class="card">
           <div class="hrow"><span class="lab">本月累计佣金（元）</span><span class="pill amber">可提现</span></div>
-          <div class="hrow" style="margin-top:6px;align-items:flex-end;"><span class="num">¥ 2,318.30</span><span class="lab">已结算 ¥2,110 ｜ 待结算 ¥208.3</span></div>
+          <div class="hrow" style="margin-top:6px;align-items:flex-end;"><span class="num">¥ 3,599.50</span><span class="lab">已结算 ¥2,699.75 ｜ 待结算 ¥899.85</span></div>
           <div class="btn" style="margin-top:10px;" data-act="toast:提现申请已提交（T+1 到账，已代扣个税）">提现到微信零钱（T+1，已代扣个税）</div>
         </div>
         <div class="sec-t">佣金的唯一产生公式（合规白名单）</div>
         <div class="card" style="text-align:center;padding:14px;"><div style="font-size:13px;font-weight:800;color:var(--dgreen)">佣金 = 本人直接成交订单实付金额 × 佣金比例</div><div class="flow" style="justify-content:center;margin-top:8px;"><b>真实成交</b>→<b>比例白名单 10–20%</b>→<b>支付分账</b>→<b>全程留痕</b></div><div style="font-size:10.5px;color:var(--sub);line-height:1.6;">系统内不存在按人头、按层级、按入门费的任何计酬函数<br>分销关系仅一级直推（数据库结构层面无多级字段）</div></div>
         <div class="sec-t">明细（可溯源账本 · 点击可展开凭证）</div>
         <div class="card">
-          <div class="kv" data-act="toast:展开凭证：溯源码 #A7F3 · 微信支付分账单号 4200…8821 · 已上链存证"><span class="k">09-01 大有收获 ¥5,999 ×15%</span><span class="v plus">+¥899.85</span></div>
+          <div class="kv" data-act="toast:展开凭证：溯源码 #A7F3 · 微信支付分账单号 4200…8821 · 已上链存证"><span class="k">09-01 大有收获课包 ¥5,999 ×15%</span><span class="v plus">+¥899.85</span></div>
           <div style="font-size:10px;color:var(--sub);padding:2px 0 6px;">溯源码 #A7F3 · 好友「乐乐妈妈」· 微信支付分账单号 4200…8821 · 已上链存证</div>
-          <div class="kv" data-act="toast:展开凭证：溯源码 #E2C1 · 微信支付分账单号 4200…4472"><span class="k">08-27 满载而归 ¥9,999 ×12%</span><span class="v plus">+¥1,199.88</span></div>
-          <div class="kv" data-act="toast:展开凭证：溯源码 #B9D0 · 续费分成"><span class="k">08-25 试听续费分成 ¥1,198 ×5%</span><span class="v plus">+¥59.90</span></div>
-          <div class="kv" data-act="toast:展开凭证：溯源码 #A7F3 · 已回款"><span class="k">08-24 大有收获 ¥5,999 ×15%</span><span class="v plus">+¥899.85</span></div>
+          <div class="kv" data-act="toast:展开凭证：溯源码 #E2C1 · 微信支付分账单号 4200…4472"><span class="k">08-27 满载而归课包 ¥9,999 ×15%</span><span class="v plus">+¥1,499.85</span></div>
+          <div class="kv" data-act="toast:展开凭证：溯源码 #B9D0 · 续费分成"><span class="k">08-24 大有收获课包 ¥5,999 ×15%</span><span class="v plus">+¥899.85</span></div>
+          <div class="kv" data-act="toast:展开凭证：溯源码 #A7F3 · 已回款"><span class="k">08-20 老学员续费 ¥5,999 ×5%</span><span class="v plus">+¥299.95</span></div>
         </div>
         <div class="card" style="font-size:11px;color:var(--sub);line-height:1.7;"><b style="color:var(--dgreen)">透明即信任</b>：退款自动冲正佣金；每笔分账由微信支付通道完成，平台不经手资金沉淀；纳税记录可一键导出。</div>
       </div>
 
-      <!-- 屏5 我的（含二级子页） -->
+      <!-- 屏5 我的（按图5：成长阶梯 + 功能与服务 + 设置入口） -->
       <div class="pane" data-pane="4">
-
         <div class="mine-head">
           <div class="row1">
-            <div class="av">👤<span class="up">更新</span></div>
+            <div class="av">芸</div>
             <div style="flex:1;min-width:0;">
-              <div class="name">林晓芸</div>
-              <div class="role">个人共生伙伴 · 口碑顾问</div>
-              <div class="uid">UserID: 32098765</div>
+              <div><span class="name">林晓芸</span><span class="role">Lv.2 口碑顾问</span></div>
+              <div class="uid">共生伙伴编号 QD-2026-08192 · 已实名认证 · 已签电子协议</div>
             </div>
-            <div class="chip">已获自购返佣权限</div>
+            <div class="mh-gear" data-act="sub:settings"><span>⚙️</span>设置</div>
           </div>
         </div>
 
-        <div class="mi" data-act="sub:account"><div class="ic" style="background:var(--lgreen)">👤</div><div class="tt">账户管理</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:perm"><div class="ic" style="background:#e8effc">🔐</div><div class="tt">权限管理</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:msg"><div class="ic" style="background:#fdeef0">📢</div><div class="tt">消息中心</div><span class="dot"></span><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:task"><div class="ic" style="background:#fdf1dc">📋</div><div class="tt">任务中心</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:class"><div class="ic" style="background:var(--lgreen)">🎓</div><div class="tt">我的课堂</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:fb"><div class="ic" style="background:#f3e8fb">💬</div><div class="tt">问题反馈</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:pp"><div class="ic" style="background:#eef1ef">🛡️</div><div class="tt">隐私政策</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:pps"><div class="ic" style="background:#eef1ef">📄</div><div class="tt">隐私政策摘要</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:collect"><div class="ic" style="background:#eef1ef">🗂️</div><div class="tt">个人信息收集清单</div><span class="arr">›</span></div>
-        <div class="mi" data-act="sub:share"><div class="ic" style="background:#eef1ef">🔗</div><div class="tt">与第三方共享个人信息清单</div><span class="arr">›</span></div>
-        <div class="mi" data-act="toast:已退出登录（说明：演示数据，不会真正退出）"><div class="ic" style="background:#f5f5f5;color:#c0563b">⏻</div><div class="tt" style="color:#c0563b">退出登录</div><span class="arr">›</span></div>
+        <div class="stat3">
+          <div><div class="num">¥3,599</div><div class="lab">本月佣金</div></div>
+          <div><div class="num">3</div><div class="lab">在售商品</div></div>
+          <div><div class="num">4.9</div><div class="lab">服务评分</div></div>
+        </div>
+
+        <div class="card" style="display:flex;gap:14px;align-items:center;">
+          <div class="ring-mini"><div class="ring-txt"><b>Lv.2</b><span>口碑顾问</span></div></div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:800;color:var(--dgreen);">共生成长值 <span style="color:var(--ink);font-weight:700;">720/1000</span></div>
+            <div style="font-size:10.5px;color:var(--sub);margin-top:5px;line-height:1.6;">成长值由「真实成交 + 服务评分 + 学习进度」构成<br>与"拉人头"无任何关系</div>
+          </div>
+        </div>
+
+        <div class="sec-t">我的成长阶梯</div>
+        <div class="card" style="padding:4px 14px;">
+          <div class="lvl" data-act="toast:体验分享官 · 已通过"><div class="bd bd-g1">1</div><div><div class="tt">体验分享官</div><div class="dd">注册即成 · 零门槛零费用 · 佣金 10%</div></div><span class="st st-pass">已通过</span></div>
+          <div class="lvl" data-act="toast:口碑顾问 · 当前等级"><div class="bd bd-g2">2</div><div><div class="tt">口碑顾问</div><div class="dd">累计成交 5 单 + 服务评分 ≥4.8 · 佣金 15% + 续费分成</div></div><span class="st st-cur">当前</span></div>
+          <div class="lvl" data-act="toast:金牌教育顾问 · 差 280 成长值"><div class="bd bd-g3">3</div><div><div class="tt">金牌教育顾问</div><div class="dd">通过教育顾问认证 · 解锁 AI 测评钩子 · 专属培训</div></div><span class="st st-next">差 280 成长值</span></div>
+          <div class="lvl" data-act="toast:城市合伙人 · 未解锁"><div class="bd bd-g4">4</div><div><div class="tt">城市合伙人（企业主体）</div><div class="dd">注册个体户/公司 · 承接本地服务 · 与平台 B2B 合作</div></div><span class="st st-lock">未解锁</span></div>
+        </div>
+
+        <div class="sec-t">功能与服务</div>
+        <div class="card" style="padding:4px 0;">
+          <div class="mi" data-act="sub:class"><div class="ic" style="background:var(--lgreen)">🎓</div><div class="tt">我的学习 <span style="color:var(--sub);font-weight:600;">· 新手课程 3/8</span></div><span class="arr">›</span></div>
+          <div class="mi" data-act="sub:protocol"><div class="ic" style="background:#e8effc">📄</div><div class="tt">我的协议 <span style="color:var(--sub);font-weight:600;">· 分销协议/合规承诺书</span></div><span class="arr">›</span></div>
+          <div class="mi" data-act="sub:tax"><div class="ic" style="background:#fdf1dc">💰</div><div class="tt">纳税记录 <span style="color:var(--sub);font-weight:600;">· 平台代扣代缴</span></div><span class="arr">›</span></div>
+          <div class="mi" data-act="sub:fb"><div class="ic" style="background:#fdeef0">🎧</div><div class="tt">帮助与客服 <span style="color:var(--sub);font-weight:600;">· 申诉通道</span></div><span class="arr">›</span></div>
+        </div>
 
         <!-- 二级子页容器 -->
         <div class="subpane" id="subpane"><div class="subnav"><span class="bk" id="subBack">‹</span><b id="subTitle"></b></div><div id="subBody"></div></div>
@@ -325,7 +383,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  const titles = ["共生伙伴工作台","AI 选品中心","AI 共生助手","佣金看板","我的"];
+  const titles = ["共生伙伴工作台","AI 选品中心","AI 助手","佣金看板","我的"];
   const tabs = document.querySelectorAll(".tab");
   const panes = document.querySelectorAll(".pane");
   const navTitle = document.getElementById("navTitle");
@@ -357,9 +415,9 @@
 
   // ===== 课程详情数据 =====
   const details = {
-    course1:{t:"说客英语 · 大有收获课包（173 课时）",price:"¥5,999",desc:"入门课包 · 168+5=173 课时 · 约 34.68 元/课时 · 有效期 20 个月",comm:"佣金 15% · 单佣 ¥899.85",match:"94%",tags:["口碑王","圈层高匹配","强复购"]},
-    course2:{t:"说客英语 · 满载而归课包（320 课时）",price:"¥9,999",desc:"进阶课包 · 295+25=320 课时 · 约 31.25 元/课时 · 有效期 32 个月",comm:"佣金 12% · 单佣 ¥1,199.88",match:"86%",tags:["高课时均摊","进阶首选"]},
-    course3:{t:"说客英语 · 五谷丰登课包（900 课时）",price:"¥22,888",desc:"全年课包 · 800+100=900 课时 · 约 25.43 元/课时 · 有效期 78 个月",comm:"佣金 10% · 单佣 ¥2,288.80",match:"70%",tags:["超长有效期","全家共用"]}
+    course1:{t:"说客英语 · 大有收获课包（168+5 赠 = 173 课时）",price:"¥5,999",desc:"入门课包 · 约 34.68 元/课时 · 有效期 20 个月 · 菲教 1 节扣 1 课时",comm:"佣金 15% · 单佣 ¥899.9",match:"94%",tags:["口碑王","圈层高匹配","强复购"]},
+    course2:{t:"说客英语 · 满载而归课包（295+25 = 320 课时）",price:"¥9,999",desc:"进阶课包 · 约 31.25 元/课时 · 有效期 32 个月 · 中教 1 节扣 2 课时",comm:"佣金 15% · 单佣 ¥1,499.9",match:"86%",tags:["高课时均摊","进阶首选"]},
+    course3:{t:"说客英语 · 五谷丰登课包（800+100 = 900 课时）",price:"¥22,888",desc:"长期课包 · 约 25.43 元/课时 · 有效期 78 个月 · 欧美外教 1 节扣 3 课时起",comm:"佣金 12% · 单佣 ¥2,746.6",match:"64%",tags:["超长有效期","全家共用"]}
   };
 
   const sheet = document.getElementById("sheet"), mask = document.getElementById("mask"), sheetBody = document.getElementById("sheetBody");
@@ -387,6 +445,19 @@
 
   // ===== 我的页二级子页内容 =====
   const subpages = {
+    settings:{title:"设置",html:`
+      <div style="font-size:10.5px;color:var(--sub);line-height:1.6;margin-bottom:10px;">账户、权限、消息、任务、隐私与合规相关设置，都在这里集中管理。</div>
+      <div class="mi" data-act="sub:account"><div class="ic" style="background:var(--lgreen)">👤</div><div class="tt">账户管理</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:perm"><div class="ic" style="background:#e8effc">🔐</div><div class="tt">权限管理</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:msg"><div class="ic" style="background:#fdeef0">📢</div><div class="tt">消息中心</div><span class="dot"></span><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:task"><div class="ic" style="background:#fdf1dc">📋</div><div class="tt">任务中心</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:class"><div class="ic" style="background:var(--lgreen)">🎓</div><div class="tt">我的课堂</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:fb"><div class="ic" style="background:#f3e8fb">💬</div><div class="tt">问题反馈</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:pp"><div class="ic" style="background:#eef1ef">🛡️</div><div class="tt">隐私政策</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:pps"><div class="ic" style="background:#eef1ef">📄</div><div class="tt">隐私政策摘要</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:collect"><div class="ic" style="background:#eef1ef">🗂️</div><div class="tt">个人信息收集清单</div><span class="arr">›</span></div>
+      <div class="mi" data-act="sub:share"><div class="ic" style="background:#eef1ef">🔗</div><div class="tt">与第三方共享个人信息清单</div><span class="arr">›</span></div>
+      <div class="mi" data-act="toast:已退出登录（说明：演示数据，不会真正退出）"><div class="ic" style="background:#f5f5f5;color:#c0563b">⏻</div><div class="tt" style="color:#c0563b">退出登录</div><span class="arr">›</span></div>`},
     account:{title:"账户管理",html:`
       <div class="card">
         <div class="sec-t" style="margin-top:0">基础信息</div>
@@ -454,7 +525,19 @@
         <div style="padding:11px 12px;"><div style="font-size:12.5px;font-weight:700;">新手入门 · 帮助推广</div><div style="font-size:10.5px;color:var(--sub);margin-top:3px;">青豆共生伙伴平台 · 实操指南</div></div>
       </div>
       <div style="font-size:10.5px;color:var(--sub);line-height:1.6;">完成课程可获得成长值，提升推荐专业度与服务评分。</div>`},
-    fb:{title:"问题反馈",html:`
+    protocol:{title:"我的协议",html:`
+      <div style="font-size:10.5px;color:var(--sub);line-height:1.6;margin-bottom:10px;">你是青豆共生伙伴平台的个人推广者，请遵守以下协议。</div>
+      <div class="card"><div class="hrow"><div><div style="font-size:12.5px;font-weight:700">分销协议</div><div style="font-size:10.5px;color:var(--sub);margin-top:3px;">已签署 · 2026-09-01</div></div><span style="color:var(--dgreen)">›</span></div></div>
+      <div class="card"><div class="hrow"><div><div style="font-size:12.5px;font-weight:700">合规承诺书</div><div style="font-size:10.5px;color:var(--sub);margin-top:3px;">已签署 · 2026-09-01</div></div><span style="color:var(--dgreen)">›</span></div></div>
+      <div class="card" style="font-size:11px;color:var(--sub);line-height:1.7;"><b style="color:var(--dgreen)">提示</b>：承诺不夸大宣传、不虚构收益、不使用违禁词，仅向真实好友推荐真实到店/试听/课包。</div>`},
+    tax:{title:"纳税记录",html:`
+      <div class="card">
+        <div style="font-size:11px;color:var(--sub);line-height:1.6;margin-bottom:8px;">平台已按国家规定代扣代缴个人所得税。以下为近 3 个月申报记录。</div>
+        <div class="kv"><span class="k">2026 年 8 月</span><span class="v plus">已代扣</span></div>
+        <div class="kv"><span class="k">2026 年 9 月</span><span class="v plus">已代扣（待结算并入下期）</span></div>
+      </div>
+      <div class="btn" data-act="toast:纳税记录已导出（演示）">一键导出纳税记录</div>`},
+    fb:{title:"帮助与客服",html:`
       <div class="card"><div class="hrow"><div><div style="font-size:12.5px;font-weight:700">创建问题</div><div style="font-size:10.5px;color:var(--sub);margin-top:3px;">描述你遇到的问题，我们会尽快处理</div></div><span style="color:var(--dgreen)">›</span></div></div>
       <div class="card" style="font-size:11px;color:var(--sub);line-height:1.7;"><b style="color:var(--dgreen)">提问建议</b>：附上截图与操作步骤，能更快定位问题。涉及合规、结算、素材生成的问题会优先处理。</div>`},
     pp:{title:"隐私政策",html:`
@@ -480,27 +563,10 @@
     subTitle.textContent = pg.title;
     subBody.innerHTML = pg.html;
     subpane.classList.add("on"); subpane.scrollTop = 0;
-    subBody.querySelectorAll("[data-act]").forEach(el=>{ el.addEventListener("click",e=>{ const a=el.dataset.act; if(a==="toast") showToast("演示数据 · 仅供评审参考"); else if(a.startsWith("toast:")) showToast(a.slice(6)); }); });
+    subBody.querySelectorAll("[data-act]").forEach(el=>{ el.addEventListener("click",e=>{ const a=el.dataset.act; if(a.startsWith("sub:")){ openSub(a.slice(4)); } else if(a==="toast") showToast("演示数据 · 仅供评审参考"); else if(a.startsWith("toast:")) showToast(a.slice(6)); }); });
   }
   function closeSub(){ subpane.classList.remove("on"); }
   document.getElementById("subBack").addEventListener("click",closeSub);
-
-  // ===== AI助手 六宫格技能 =====
-  // 填充到屏3（data-pane=2）
-  const aiPane = panes[2];
-  const skillHtml = `
-    <div class="skill-grid">
-      <div class="skill" data-act="toast:AI 选品：已按你的圈层画像匹配 3 个高契合课包"><div class="ic">🎯</div><div class="tt">AI 选品</div><div class="dd">按圈层画像匹配高契合课包</div></div>
-      <div class="skill" data-act="toast:AI 素材工厂：已生成朋友圈文案 + 海报，并完成合规审核"><div class="ic">✍️</div><div class="tt">AI 素材工厂</div><div class="dd">生成朋友圈文案与配图海报</div></div>
-      <div class="skill" data-act="toast:AI 话术双审：广告法违禁词 + 收益承诺检测均通过"><div class="ic">🔍</div><div class="tt">AI 话术双审</div><div class="dd">广告法与收益承诺双重检测</div></div>
-      <div class="skill" data-act="toast:AI 合规检测：发布前强制通过，全程留痕可溯源"><div class="ic">🛡️</div><div class="tt">AI 合规检测</div><div class="dd">发布前强制 · 全链路留痕</div></div>
-      <div class="skill" data-act="toast:AI 学习教练：按你的成长值推荐学习与任务"><div class="ic">🎓</div><div class="tt">AI 学习教练</div><div class="dd">按成长值推荐课程与任务</div></div>
-      <div class="skill" data-act="toast:AI 经营诊断：今日预估收益 ¥168.5，建议 10:00 前发布素材"><div class="ic">📊</div><div class="tt">AI 经营诊断</div><div class="dd">数据解读 · 今日行动建议</div></div>
-    </div>
-    <div class="sec-t">今日 AI 精选</div>
-    <div class="card"><div style="font-size:12.5px;font-weight:800;color:var(--dgreen)">💡 你圈层匹配度最高</div><div style="font-size:11px;color:var(--sub);margin-top:5px;line-height:1.6;">「说客英语·大有收获课包（173 课时）」匹配度 94%。建议今天推送这个，把「¥5,999 / 约 ¥34.68 课时」作为主打利益点。</div><div class="btn ghost" data-act="go-tab:1">去选品中心看看</div></div>
-  `;
-  aiPane.insertAdjacentHTML("beforeend", skillHtml);
 
   // ===== 全局点击 =====
   document.addEventListener("click",e=>{
